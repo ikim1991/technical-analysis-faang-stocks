@@ -58,9 +58,6 @@ NFLX | 37.5% | 42.9% | 1.52 |
 GOOGL | 13.8% | 23.3% | 1.20 |
 ^GSPC | 7.68% | 13.3% | 1.00 |
 
-The Beta was calculated using the following formula:
-$$ \beta_{i} = \frac{\sigma_{i,m}}{\sigma_{m}^2} $$
-
 The normalized returns of the stocks and the S&P500 is shown in the figure below.
 
 ![Normalized Returns](./Figures/Normalized_Returns_of_FAANG_Stocks_and_the_S&P500.png)
@@ -106,10 +103,6 @@ The gains of the portfolio and stocks are illustrated in the figures below.
 
 ### Sharpe Ratio
 
-The Sharpe Ratios were calculated using the following formula:
-
-$$ Sharpe = \frac{{r_{i}} - r_f}{\sigma_{i}} $$
-
 For an equally allocated portfolio, the expected portfolio return is around 25.6% with an expected portfolio volatility of 24.2%. Taking into account the risk free rate of 2.5%, the Sharpe Ratio of an equally allocated portfolio is about 0.9557.
 
 ### Portfolio Optimization
@@ -119,7 +112,7 @@ The table below shows the results of the different methods of finding the optimu
 Method | Returns | Standard Dev. | Sharpe Ratio |FB Weight |  AAPL Weight | AMZN Weight | NFLX Weight | GOOGL Weight
 ------------ | ------------- | ------------ | ------------- | ------------ | ------------- | ------------ | ------------- | ------------- |
 Equal Allocation | 25.6% | 24.2% | 0.9557 | 0.20 | 0.20 | 0.20 | 0.20 | 0.20 |
-Random Allocation | 27.2% | 25.1% | 0.9839 | 0.10 | 0.28 | 0.33 | 0.29 | 0.00 |
+Random Allocation | 28.1% | 26.0% | 0.9832 | 0.10 | 0.23 | 0.34 | 0.23 | 0.00 |
 Scipy Minimize | 28.1% | 25.7% | 0.9968 | 0.08 | 0.25 | 0.33 | 0.33 | 0.00 |
 
 By randomly allocating thousands of portfolio weights, a close approximation to the optimal portfolio weighting with optimal
@@ -138,13 +131,7 @@ The Efficient Frontier Curve also known as the Modern Portfolio Theory, is illus
 
 In a time series analysis, the Drift Method can be used to forecast future stock prices.
 
-$$ drift = mean - \frac{1}{2} \cdot var $$
-
-$$ r = drift + stdev \cdot z $$
-
-$$ daily\_returns = e^{r} $$
-
-Using the historical stock prices to determine the mean, variance, and the standard deviation, the future stock prices can be forecasted over a randomized normal distribution (Z).
+Using the historical stock prices to determine the mean, variance, and the standard deviation, the future stock prices can be forecasted over a randomized normal distribution.
 
 The Monte Carlo Simulation of the FAANG stocks using the Drift Method is illustrated in the figures below.
 
